@@ -119,7 +119,7 @@ const ClientsAdmin = () => {
                                             <tr>
                                                 <th>nombre</th>
                                                 <th>rol</th>
-                                                <th>operadorID</th>
+                                                <th>operadorId</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>

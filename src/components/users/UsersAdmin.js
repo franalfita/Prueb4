@@ -24,19 +24,19 @@ const UsersAdmin = () => {
             if(userList.length === 0){
                 rowData = (<tr><td colSpan="4" className="text-center">No existen Usuarios</td></tr>);
             } else {
-                rowData = userList.map(p => {
+                rowData = userList.map(u => {
                     let button;
-                    if(p.active){
-                        button = <button className="btn btn-secondary" onClick={() => disable(p)}><i className="fas fa-eye-slash"></i> Deshabilitar</button>;
+                    if(u.active){
+                        button = <button className="btn btn-secondary" onClick={() => disable(u)}><i className="fas fa-eye-slash"></i> Deshabilitar</button>;
                     } else {
-                        button = <button className="btn btn-primary" onClick={() => enable(p)}><i className="fas fa-eye"></i> Habilitar</button>;
+                        button = <button className="btn btn-primary" onClick={() => enable(u)}><i className="fas fa-eye"></i> Habilitar</button>;
                     }
                     
                     return (<tr>
-                        <td>{p.name}</td><td className="text-right">{p.nickname}</td><td className="text-right">{p.level}</td>
+                        <td>{u.name}</td><td className="text-right">{u.nickname}</td><td className="text-right">{u.level}</td>
                         <td className="d-flex justify-content-between">
                             {button}
-                            <button className="btn btn-warning" onClick={() => edit(p)}><i className="fas fa-pencil"></i> Editar</button>
+                            <button className="btn btn-warning" onClick={() => edit(u)}><i className="fas fa-pencil"></i> Editar</button>
                         </td>
                     </tr>); 
                 });

@@ -20,17 +20,16 @@ const ClientsAdd = () => {
 
     const save = async (event) => {
         event.preventDefault();
-        var {clientName, rol, operatorId} = document.forms[0];
+        var {clientName, rol} = document.forms[0];
         var errors = "";
-        errors += parseInt(clientName === operatorId) ? "no puede ser igual variable.\n": "";
-        errors += parseInt(rol.value) > "" ? "no se puede dejar en blanco.\n": "";
+        errors += parseInt(rol.value) > 1111111 ? "no se puede dejar en blanco.\n": "";
         if(errors.length > 0){
             window.alert("Corrija los siguientes errores:\n"+errors);
         } else {
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify({ "operatorId": config.operatorId, "name": clientName.value,"rol": rol.value,"operadorID": operatorId.value})
+                body: JSON.stringify({ "operatorId": config.operatorId, "name": clientName.value,"rol": rol.value})
               }
               fetch(config.apiURL+"clients", requestOptions).then((response) => {
                 switch(response.status){

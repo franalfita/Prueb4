@@ -22,8 +22,7 @@ const UsersAdd = () => {
         event.preventDefault();
         var {userName,nickname,password,level} = document.forms[0];
         var errors = "";
-        errors += parseInt(userName.value !== nickname.value) ? "tiene qser diferente al nombre.\n": "";
-        errors += parseInt(password.value !== userName)? "No puede ser igual al nombre.\n": "";
+        errors += parseInt(password)!== 1? "No puede ser igual al nombre.\n": "";
         if(errors.length > 0){
             window.alert("Corrija los siguientes errores:\n"+errors);
         } else {
@@ -95,8 +94,11 @@ const UsersAdd = () => {
                                 </div>
                                 <div className="col-4">
                                     <div className="form-group">
-                                        <label htmlFor="level" className="control-label">level</label>
-                                        <input type="enum" name="level" id="level" className="form-control" required />
+                                        <label htmlFor="level" className="control-label">level</label><br />
+                                        <select name="level" id="level" className="form-control">
+                                        <option value="admin">admin</option>
+                                        <option value="seller">seller</option>
+                                        </select>
                                     </div>
                                 </div>
                             <div className="d-flex justify-content-between">
