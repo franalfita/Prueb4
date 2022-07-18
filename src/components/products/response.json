@@ -1,0 +1,1 @@
+{"message":"Missing fields required for query","data":{"requiredParams":["clientId"],"requireData":["rol","name","operatorId","active"]}}
